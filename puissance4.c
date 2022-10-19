@@ -1,26 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-showBoard();
-showWinner();
-checkWinner();
-playerMove();
+showBoard();   // affiche le tableau de jeux
+showWinner();  // affiche le gagnan (joueur 1 ou 2)
+checkWinner(); // vérifie si un des deux joueurs à gagner 
+playerMove();  // retient en mémoire le mouvement du joueur pour l'afficher sur le tableau
 
-char Joueur1 = 'X';
-char Joueur2 = 'O';
+char Player1 = 'X';
+char Player2 = 'O';
 
-char board [6][7];
+char board [7];
 int nbRangee;
+char winner = ' ';
 
 
 int main(){
 
     int espaceRestant = 42;    /* équivaut au nombre de case vide 
                                   au départ du jeux. */
-   while (espaceRestant != 0)
+   while (espaceRestant != 0 && winner = ' ')
    {
     showBoard();
-    espaceRestant --;
    }
    return EXIT_SUCCESS;
 }
@@ -28,17 +28,17 @@ int main(){
 
 showBoard(){
     printf("    V \n");
-    printf("|%c   | %c  | %c  | %c  | %c  | %c  | %c  |", board[0][0], board[0][1], board[0][2], board[0][3], board[0][4], board[0][5], board[0][6]);
+    printf("|%c   | %c  | %c  | %c  | %c  | %c  | %c  |", board[0], board[0], board[0], board[0], board[0], board[0], board[0]);
     printf("\n|---|---|---|---|---|---|---|\n");
-    printf("|%c   | %c  | %c  | %c  | %c  | %c  | %c  |", board[1][0], board[1][1], board[1][2], board[1][3], board[1][4], board[1][5], board[1][6]);
+    printf("|%c   | %c  | %c  | %c  | %c  | %c  | %c  |", board[1], board[1], board[1], board[1], board[1], board[1], board[1]);
     printf("\n|---|---|---|---|---|---|---|\n");
-    printf("|%c   | %c  | %c  | %c  | %c  | %c  | %c  |", board[2][0], board[2][1], board[2][2], board[2][3], board[2][4], board[2][5], board[2][6]);
+    printf("|%c   | %c  | %c  | %c  | %c  | %c  | %c  |", board[2], board[2], board[2], board[2], board[2], board[2], board[2]);
     printf("\n|---|---|---|---|---|---|---|\n");
-    printf("|%c   | %c  | %c  | %c  | %c  | %c  | %c  |", board[3][0], board[3][1], board[3][2], board[3][3], board[3][4], board[3][5], board[3][6]);
+    printf("|%c   | %c  | %c  | %c  | %c  | %c  | %c  |", board[3], board[3], board[3], board[3], board[3], board[3], board[3]);
     printf("\n|---|---|---|---|---|---|---|\n");
-    printf("|%c   | %c  | %c  | %c  | %c  | %c  | %c  |", board[4][0], board[4][1], board[4][2], board[4][3], board[4][4], board[4][5], board[4][6]);
+    printf("|%c   | %c  | %c  | %c  | %c  | %c  | %c  |", board[4], board[4], board[4], board[4], board[4], board[4], board[4]);
     printf("\n|---|---|---|---|---|---|---|\n");
-    printf("|%c   | %c  | %c  | %c  | %c  | %c  | %c  |", board[5][0], board[5][1], board[5][2], board[5][3], board[5][4], board[5][5], board[5][6]);
+    printf("|%c   | %c  | %c  | %c  | %c  | %c  | %c  |", board[5], board[5], board[5], board[5], board[5], board[5], board[5]);
     printf("\n|---|---|---|---|---|---|---|\n");
    playerMove();
 }
@@ -47,18 +47,21 @@ playerMove(){
     printf("Joueur 1 : Choisissez une rangée avec le curseur");
     scanf("%d", &nbRangee);
 
+    board [nbRangee] = Player1;
+    espaceRestant --;
 
 
     printf("Joueur 2 : Choisissez une rangée avec le curseur");
     scanf("%d", &nbRangee);
 
+    board[nbRangee] = Player2;        
+    espaceRestant --;
+
 }
 
 checkWinner(){
-    
 }
 
 
 showWinner(){
-
 }
