@@ -11,7 +11,7 @@ int espaceRestant = 42;  /* équivaut au nombre de case vide
                            au départ du jeux. */
 
 int main(){
-    printf("Hello world !!");
+    printf("Hello world !!!!!");
 }
 
 
