@@ -6,6 +6,9 @@ showWinner();
 checkWinner();
 playerMove();
 
+char Joueur1 = 'X';
+char Joueur2 = 'O';
+
 char board [6][7];
 int nbRangee;
 
@@ -19,11 +22,12 @@ int main(){
     showBoard();
     espaceRestant --;
    }
-   
+   return EXIT_SUCCESS;
 }
 
 
 showBoard(){
+    printf("    V \n");
     printf("|%c   | %c  | %c  | %c  | %c  | %c  | %c  |", board[0][0], board[0][1], board[0][2], board[0][3], board[0][4], board[0][5], board[0][6]);
     printf("\n|---|---|---|---|---|---|---|\n");
     printf("|%c   | %c  | %c  | %c  | %c  | %c  | %c  |", board[1][0], board[1][1], board[1][2], board[1][3], board[1][4], board[1][5], board[1][6]);
@@ -42,6 +46,7 @@ showBoard(){
 playerMove(){
     printf("Joueur 1 : Choisissez une rangée avec le curseur");
     scanf("%d", &nbRangee);
+
 
 
     printf("Joueur 2 : Choisissez une rangée avec le curseur");
